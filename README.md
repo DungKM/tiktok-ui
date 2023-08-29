@@ -69,10 +69,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### customize-cra -> Cấu hình Webpack
+### customize-cra -> Cấu hình Webpack-> ghi đè cấu hình WebPack
 
 [https://github.com/arackaf/customize-cra]
 
 ### babel-plugin-module-resolver -> optimize import
 
 [https://github.com/tleunen/babel-plugin-module-resolver]
+
+### Cấu hình SCSS SASS
+
+1.Tạo GlobalStyle
+2.Cài thư viện SASS
+3.Reset CSS [`npm install --save normalize.css`]
+[https://github.com/necolas/normalize.css]
+4.Default CSS: Font-family, font-size, line-height
