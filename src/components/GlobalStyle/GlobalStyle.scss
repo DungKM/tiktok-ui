@@ -3,9 +3,13 @@
 
 :root {
     font-size: 62.5%;
+    --default-layout-width: 1150px
 }
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+
 }
 html{
     font-family: 'Roboto', sans-serif;

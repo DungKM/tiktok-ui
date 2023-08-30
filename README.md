@@ -91,3 +91,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 2.Cài đặt react-router-dom: `npm i react-router-dom`
 3.Đưa cấu hình routes ra ngoài
 4.Xây dựng cơ chế tải Layout
+
+
+### Dựng khung Defaultlayout dự án tiktok
+
+Cài Thư viện className : `npm i classnames`
