@@ -84,3 +84,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 3.Reset CSS [`npm install --save normalize.css`]
 [https://github.com/necolas/normalize.css]
 4.Default CSS: Font-family, font-size, line-height
+
+### Cấu hình Router và xây dựng cơ chế tải Layout
+
+1.Phân tích tổng quan Layout
+2.Cài đặt react-router-dom: `npm i react-router-dom`
+3.Đưa cấu hình routes ra ngoài
+4.Xây dựng cơ chế tải Layout
