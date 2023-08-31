@@ -3,8 +3,41 @@
 
 :root {
     font-size: 62.5%;
-    --default-layout-width: 1150px
+    --default-layout-width: 1150px;
+    --black : #000;
+    --text-color : #000;
+    --border-radius-button : 92px;
+    --search-button-width : 52px;
+    --primary:#fe2c55;
 }
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+
 *{
     margin: 0;
     padding: 0;

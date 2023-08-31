@@ -92,7 +92,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 3.Đưa cấu hình routes ra ngoài
 4.Xây dựng cơ chế tải Layout
 
-
 ### Dựng khung Defaultlayout dự án tiktok
 
 Cài Thư viện className : `npm i classnames`
+Font Icon
+["@fortawesome/fontawesome-svg-core": "^1.3.0",
+"@fortawesome/free-brands-svg-icons": "^6.0.0",
+"@fortawesome/free-regular-svg-icons": "^6.4.2",
+"@fortawesome/free-solid-svg-icons": "^6.4.2",
+"@fortawesome/react-fontawesome": "^0.1.17",]
