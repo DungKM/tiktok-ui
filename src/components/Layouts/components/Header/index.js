@@ -5,14 +5,14 @@ import images from "~/assets/images";
 import {
   faCircleXmark,
   faSearch,
-  faSpinner,
+
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import { PropperWrapper } from "~/components/Propper";
 import { useEffect, useState } from "react";
 import AccountItem from "~/components/AccountItem";
-
+import Button from "~/components/Button";
 const cx = classNames.bind(styles);
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
@@ -24,7 +24,7 @@ function Header() {
       <div className={cx("inner")}>
         <img src={images.logo} alt="Tiktok" />
         <Tippy
-        interactive
+          interactive
           visible={searchResult.length > 0}
           render={(attrs) => (
             <div className={cx("search-result")} tabIndex="-1" {...attrs}>
@@ -51,7 +51,11 @@ function Header() {
             </button>
           </div>
         </Tippy>
-        <div className={cx("action")}></div>
+        <div className={cx("action")}>
+          <Button text>Upload</Button>
+          {/* <Button primary lefticon={ <FontAwesomeIcon icon={faSignIn} />}>Log in</Button> */}
+          <Button primary >Log in</Button>
+        </div>
       </div>
     </header>
   );
