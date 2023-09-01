@@ -101,3 +101,6 @@ Font Icon
 "@fortawesome/free-regular-svg-icons": "^6.4.2",
 "@fortawesome/free-solid-svg-icons": "^6.4.2",
 "@fortawesome/react-fontawesome": "^0.1.17",]
+
+### Dựng khung Defaultlayout dự án tiktok 2
+Thư viện tippy Props `npm i @tippyjs/react`
