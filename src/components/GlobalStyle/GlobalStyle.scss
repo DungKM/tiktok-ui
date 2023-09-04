@@ -5,7 +5,7 @@
     font-size: 62.5%;
     --black : #000;
     --white: #fff;
-    --text-color : #000;
+    --text-color : #161823;
     --border-radius-button : 92px;
     --search-button-width : 52px;
     --primary:#fe2c55;
@@ -53,6 +53,25 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
+    color: var(--text-color);
     text-rendering: optimizeSpeed;
+    .tippy-box {
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      background-color: rgba(84, 84, 84, 0.92);
+  }
 
+  .tippy-arrow {
+      color: rgba(84, 84, 84, 0.92);
+  }
+
+  .tippy-content {
+      padding: 8px 9px;
+  }
+
+  .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+      top: -8px;
+  }
 }

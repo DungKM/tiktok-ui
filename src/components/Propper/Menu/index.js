@@ -8,10 +8,12 @@ import Header from "./Header";
 import { useState } from "react";
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
+
+
 function Menu({ children, items = [], onChange = defaultFn }) {
+
   const [history, setHistory] = useState([{ data : items}]);
   const current = history[history.length - 1]
-console.log(current);
 
   const renderItems = () => {
     return current.data.map((item, index) => {
@@ -28,8 +30,8 @@ console.log(current);
   return (
     <Tippy
       interactive
-      visible
       delay={[0, 700]}
+      offset={[12, 8]}
       placement="bottom-end"
       render={(attrs) => (
         <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
@@ -41,6 +43,7 @@ console.log(current);
           </PropperWrapper>
         </div>
       )}
+      onHide={()=> setHistory(prev => prev.slice(0, 1))}
     >
       {children}
     </Tippy>
