@@ -5,7 +5,6 @@ import images from "~/assets/images";
 import {
   faCircleQuestion,
   faCircleXmark,
-  faCloudUpload,
   faCoins,
   faEarthAsia,
   faEllipsisVertical,
@@ -25,6 +24,8 @@ import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import Menu from "~/components/Propper/Menu";
 import MenuItem from "~/components/Propper/Menu/MenuItem";
+import { UploadIcon } from "~/components/Icon";
+import Image from "~/components/Image";
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -94,9 +95,9 @@ function Header() {
       icon: <FontAwesomeIcon icon={faSignOut} />,
       title: "Logout",
       to: "/logout",
-      separate : true
+      separate: true,
     },
-  ]
+  ];
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
@@ -132,12 +133,11 @@ function Header() {
         <div className={cx("action")}>
           {currentUser ? (
             <>
-            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
-
-              <button className={cx("action-btn")}>
-                <FontAwesomeIcon icon={faCloudUpload} />
-              </button>
-            </Tippy>
+              <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <UploadIcon />
+                </button>
+              </Tippy>
               <button className={cx("action-btn")}>
                 <FontAwesomeIcon icon={faMessage} />
               </button>
@@ -150,12 +150,16 @@ function Header() {
               <Button primary>Log in</Button>
             </>
           )}
-          <Menu items={currentUser ? userMenu :  MENU_ITEMS} onChange={handleMenuChange}>
+          <Menu
+            items={currentUser ? userMenu : MENU_ITEMS}
+            onChange={handleMenuChange}
+          >
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
                 alt="Hoang Anh Dung"
-                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-aiso/f380dc95682d4a49aff9396b638edee1~c5_300x300.webp?x-expires=1693699200&x-signature=ErudhL5SPLFRjQvkuZNjRgC%2FWvo%3D"
+                src="httpp16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-aiso/f380dc95682d4a49aff9396b638edee1~c5_300x300.webp?x-expires=1693699200&x-signature=ErudhL5SPLFRjQvkuZNjRgC%2FWvo%3D"
+                fallback = "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4e3be7b235b902fd85cd9ed42b58ab5a~c5_100x100.jpeg?x-expires=1694052000&x-signature=gwFgdIaW4ZToHFtje12XmF0TYlE%3D"
               />
             ) : (
               <button className={cx("more-btn")}>
