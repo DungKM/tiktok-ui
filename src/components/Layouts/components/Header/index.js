@@ -4,28 +4,21 @@ import classNames from "classnames/bind";
 import images from "~/assets/images";
 import {
   faCircleQuestion,
-  faCircleXmark,
   faCoins,
   faEarthAsia,
   faEllipsisVertical,
   faGear,
   faKeyboard,
-  faMessage,
-  faSearch,
   faSignOut,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import HeadlessTippy from "@tippyjs/react/headless";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
-import { PropperWrapper } from "~/components/Propper";
-import { useEffect, useState } from "react";
-import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import Menu from "~/components/Propper/Menu";
-import MenuItem from "~/components/Propper/Menu/MenuItem";
-import { UploadIcon } from "~/components/Icon";
+import { InboxIcon, MessageIcon, UploadIcon } from "~/components/Icon";
 import Image from "~/components/Image";
+import Search from "../Search";
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -60,10 +53,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const [searchResult, setSearchResult] = useState([]);
-  useEffect(() => {
-    setTimeout(() => setSearchResult([]), 0);
-  }, []);
   // Handle logic
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {
@@ -102,34 +91,10 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <img src={images.logo} alt="Tiktok" />
-        <HeadlessTippy
-          interactive
-          visible={searchResult.length > 0}
-          render={(attrs) => (
-            <div className={cx("search-result")} tabIndex="-1" {...attrs}>
-              <PropperWrapper>
-                <h4 className={cx("search-title")}>Accounts</h4>
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-              </PropperWrapper>
-            </div>
-          )}
-        >
-          <div className={cx("search")}>
-            <input placeholder="Search accounts and video" spellCheck={false} />
-            <button className={cx("clear")}>
-              {/**Clear */}
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
-            {/* <FontAwesomeIcon className={cx("loading")} icon={faSpinner} /> */}
-            {/**Loading */}
-            <button className={cx("search-btn")}>
-              <FontAwesomeIcon icon={faSearch} />
-              {/* Search */}
-            </button>
-          </div>
-        </HeadlessTippy>
+        {/* Search */}
+        <Search />
+
+        {/* action */}
         <div className={cx("action")}>
           {currentUser ? (
             <>
@@ -138,15 +103,22 @@ function Header() {
                   <UploadIcon />
                 </button>
               </Tippy>
-              <button className={cx("action-btn")}>
-                <FontAwesomeIcon icon={faMessage} />
-              </button>
+              <Tippy delay={[0, 200]} content="Tin nhắn" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <MessageIcon />
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 200]} content="Hộp thư" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <sup className={cx("sup-inbox")}>20</sup>
+                  <InboxIcon />
+                </button>
+              </Tippy>
             </>
           ) : (
             <>
               <Button text>Upload</Button>
               {/* <Button primary lefticon={ <FontAwesomeIcon icon={faSignIn} />}>Log in</Button> */}
-
               <Button primary>Log in</Button>
             </>
           )}
@@ -159,7 +131,7 @@ function Header() {
                 className={cx("user-avatar")}
                 alt="Hoang Anh Dung"
                 src="httpp16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-aiso/f380dc95682d4a49aff9396b638edee1~c5_300x300.webp?x-expires=1693699200&x-signature=ErudhL5SPLFRjQvkuZNjRgC%2FWvo%3D"
-                fallback = "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4e3be7b235b902fd85cd9ed42b58ab5a~c5_100x100.jpeg?x-expires=1694052000&x-signature=gwFgdIaW4ZToHFtje12XmF0TYlE%3D"
+                fallback="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4e3be7b235b902fd85cd9ed42b58ab5a~c5_100x100.jpeg?x-expires=1694052000&x-signature=gwFgdIaW4ZToHFtje12XmF0TYlE%3D"
               />
             ) : (
               <button className={cx("more-btn")}>
