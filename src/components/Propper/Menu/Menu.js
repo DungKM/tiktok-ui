@@ -36,6 +36,23 @@ function Menu({
       );
     });
   };
+  // Reset to first page
+  const handleResetMenu = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
+  const handleBackMenu = () => {
+    setHistory((prev) => prev.slice(0, prev.length - 1));
+  };
+  const renderResult = (attrs) => (
+    <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
+      <PropperWrapper className={cx("menu-propper")}>
+        {history.length > 1 && (
+          <Header title={current.title} onBack={handleBackMenu} />
+        )}
+        {renderItems()}
+      </PropperWrapper>
+    </div>
+  );
   return (
     <Tippy
       interactive
@@ -43,22 +60,8 @@ function Menu({
       offset={[12, 8]}
       placement="bottom-end"
       hideOnClick={hideOnClick}
-      render={(attrs) => (
-        <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
-          <PropperWrapper className={cx("menu-propper")}>
-            {history.length > 1 && (
-              <Header
-                title={current.title}
-                onBack={() => {
-                  setHistory((prev) => prev.slice(0, prev.length - 1));
-                }}
-              />
-            )}
-            {renderItems()}
-          </PropperWrapper>
-        </div>
-      )}
-      onHide={() => setHistory((prev) => prev.slice(0, 1))}
+      render={renderResult}
+      onHide={handleResetMenu}
     >
       {children}
     </Tippy>

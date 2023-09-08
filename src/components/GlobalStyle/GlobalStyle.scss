@@ -11,6 +11,7 @@
     --primary:#fe2c55;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
+    --default-layout-header-height: 60px;
 }
 
 img,
@@ -34,7 +35,7 @@ button {
   outline: none;
   border: 0;
 }
-a[href] {
+a {
     color: var(--text-color);
     text-decoration: none;
 }
@@ -69,8 +70,22 @@ a[href] {
     box-sizing: border-box;
 
 }
-html{
-    font-family: 'ProximaNova', sans-serif;
+html {
+  font-size: 62.5%;
+}
+// Scrollbar CSS
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 body{
     font-family: 'ProximaNova', sans-serif;
@@ -78,6 +93,7 @@ body{
     line-height: 1.5;
     color: var(--text-color);
     text-rendering: optimizeSpeed;
+    overflow-y: overlay;
     .tippy-box {
       border-radius: 8px;
       font-weight: 600;
