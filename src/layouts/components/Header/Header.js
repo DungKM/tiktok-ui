@@ -16,7 +16,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import Button from "~/components/Button";
 import Menu from "~/components/Propper/Menu";
-import { InboxIcon, MessageIcon, UploadIcon } from "~/components/Icon";
+import { InboxIcon, MessageIcon, UploadIcon } from "~/components/Icons";
 import Image from "~/components/Image";
 import Search from "../Search";
 import { Link } from "react-router-dom";
@@ -55,7 +55,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
- 
   // Handle logic
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {

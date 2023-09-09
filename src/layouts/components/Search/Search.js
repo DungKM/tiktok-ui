@@ -8,7 +8,7 @@ import AccountItem from "~/components/AccountItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Search.module.scss";
 import classNames from "classnames/bind";
-import { SearchIcon } from "~/components/Icon";
+import { SearchIcon } from "~/components/Icons";
 import { useDebounce } from "~/hooks";
 import * as searchServices from "~/services/searchService";
 
